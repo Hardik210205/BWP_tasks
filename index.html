@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSU CSE Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #222;
+            padding-top: 0;
+        }
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        nav {
+            padding: 20px 10px;
+        }
+        nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <nav>
+            <a href="#about-us">About Us</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#faculty-details">Faculty Details</a>
+            <a href="#student-details">Student Details</a>
+            <a href="#contact-us">Contact Us</a>
+        </nav>
+    </div>
+    <div class="content">
+        <h1>Welcome to MSU CSE</h1>
+
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>The Computer Science and Engineering (CSE) department at MSU is dedicated to providing quality education and research opportunities in the field of computer science.</p>
+        </section>
+
+        <section id="facilities">
+            <h2>Facilities</h2>
+            <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start; margin-top: 20px;">
+                <div style="text-align: left; width: 140px;">
+                    <img src="labs.jpg" alt="Lab" style="width:120px; height:120px; border-radius:8px; box-shadow:0 2px 6px #ccc; object-fit:cover;">
+                    <div style="margin-top:8px; font-weight:bold;">Labs</div>
+                </div>
+                <div style="text-align: left; width: 140px;">
+                    <img src="wifi.jpg" alt="Wi-Fi" style="width:120px; height:120px; border-radius:8px; box-shadow:0 2px 6px #ccc; object-fit:cover;">
+                    <div style="margin-top:8px; font-weight:bold;">Wi-Fi</div>
+                </div>
+                <div style="text-align: left; width: 140px;">
+                    <img src="library.jpg" alt="Library" style="width:120px; height:120px; border-radius:8px; box-shadow:0 2px 6px #ccc; object-fit:cover;">
+                    <div style="margin-top:8px; font-weight:bold;">Library</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faculty-details">
+            <h2>Faculty Details</h2>
+            <p>Our faculty consists of experienced professionals and researchers dedicated to student success and innovation in computer science.</p>
+        </section>
+
+        <section id="student-details">
+            <h2>Student Details</h2>
+            <!-- BE-I -->
+            <details>
+                <summary style="font-weight:bold; font-size:1.1em; background:#e3f0fc; border:2px solid #1976d2; border-radius:8px; padding:10px; margin-bottom:10px;">BE-I</summary>
+                <!-- Government -->
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#eafbe7; border:1px solid #388e3c; border-radius:6px; padding:8px; margin-bottom:6px;">Government</summary>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f7fbff; border:1px solid #1976d2; border-radius:6px; padding:8px; margin-bottom:6px;">Riya Patel</summary>
+                        <div style="display: flex; align-items: flex-start;">
+                            <img src="women.jpg" alt="Woman" style="width:60px; height:60px; border-radius:50%; margin-right:16px; margin-top:4px;">
+                            <ul style="margin:0;">
+                                <li><b>PRN:</b> 20240101</li>
+                                <li><b>Year No:</b> 1</li>
+                                <li><b>Course:</b> Government</li>
+                                <li><b>Subjects:</b> Maths, Physics, Programming</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f7fbff; border:1px solid #1976d2; border-radius:6px; padding:8px; margin-bottom:6px;">Amit Singh</summary>
+                        <div style="display: flex; align-items: flex-start;">
+                            <img src="men.png" alt="Man" style="width:60px; height:60px; border-radius:50%; margin-right:16px; margin-top:4px;">
+                            <ul style="margin:0;">
+                                <li><b>PRN:</b> 20240103</li>
+                                <li><b>Year No:</b> 1</li>
+                                <li><b>Course:</b> Government</li>
+                                <li><b>Subjects:</b> Maths, Physics, C Programming</li>
+                            </ul>
+                        </div>
+                    </details>
+                </details>
+                <!-- Self-Finance -->
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#fffbe7; border:1px solid #fbc02d; border-radius:6px; padding:8px; margin-bottom:6px;">Self-Finance</summary>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f7fbff; border:1px solid #1976d2; border-radius:6px; padding:8px; margin-bottom:6px;">Harpal Shah</summary>
+                        <div style="display: flex; align-items: flex-start;">
+                            <img src="men.png" alt="Man" style="width:60px; height:60px; border-radius:50%; margin-right:16px; margin-top:4px;">
+                            <ul style="margin:0;">
+                                <li><b>PRN:</b> 20240102</li>
+                                <li><b>Year No:</b> 1</li>
+                                <li><b>Course:</b> Self-Finance</li>
+                                <li><b>Subjects:</b> Maths, Chemistry, Programming</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f7fbff; border:1px solid #1976d2; border-radius:6px; padding:8px; margin-bottom:6px;">Sneha Patel</summary>
+                        <div style="display: flex; align-items: flex-start;">
+                            <img src="women.jpg" alt="Woman" style="width:60px; height:60px; border-radius:50%; margin-right:16px; margin-top:4px;">
+                            <ul style="margin:0;">
+                                <li><b>PRN:</b> 20240104</li>
+                                <li><b>Year No:</b> 1</li>
+                                <li><b>Course:</b> Self-Finance</li>
+                                <li><b>Subjects:</b> Maths, Chemistry, Web Design</li>
+                            </ul>
+                        </div>
+                    </details>
+                </details>
+            </details>
+            <!-- BE-II -->
+            <details>
+                <summary style="font-weight:bold; font-size:1.1em; background:#eafbe7; border:2px solid #388e3c; border-radius:8px; padding:10px; margin-bottom:10px;">BE-II</summary>
+                <!-- Government -->
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#eafbe7; border:1px solid #388e3c; border-radius:6px; padding:8px; margin-bottom:6px;">Government</summary>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f6fff6; border:1px solid #388e3c; border-radius:6px; padding:8px; margin-bottom:6px;">Priya Mehta</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20230101</li>
+                            <li><b>Year No:</b> 2</li>
+                            <li><b>Course:</b> Government</li>
+                            <li><b>Subjects:</b> Data Structures, DBMS, Discrete Maths</li>
+                        </ul>
+                    </details>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f6fff6; border:1px solid #388e3c; border-radius:6px; padding:8px; margin-bottom:6px;">Rahul Patel</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20230103</li>
+                            <li><b>Year No:</b> 2</li>
+                            <li><b>Course:</b> Government</li>
+                            <li><b>Subjects:</b> Data Structures, DBMS, OOP</li>
+                        </ul>
+                    </details>
+                </details>
+                <!-- Self-Finance -->
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#fffbe7; border:1px solid #fbc02d; border-radius:6px; padding:8px; margin-bottom:6px;">Self-Finance</summary>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f6fff6; border:1px solid #388e3c; border-radius:6px; padding:8px; margin-bottom:6px;">Jay Soni</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20230102</li>
+                            <li><b>Year No:</b> 2</li>
+                            <li><b>Course:</b> Self-Finance</li>
+                            <li><b>Subjects:</b> Data Structures, DBMS, Digital Logic</li>
+                        </ul>
+                    </details>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#f6fff6; border:1px solid #388e3c; border-radius:6px; padding:8px; margin-bottom:6px;">Aarav Shah</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20230104</li>
+                            <li><b>Year No:</b> 2</li>
+                            <li><b>Course:</b> Self-Finance</li>
+                            <li><b>Subjects:</b> DBMS, Digital Logic, Java</li>
+                        </ul>
+                    </details>
+                </details>
+            </details>
+            <!-- BE-III -->
+            <details>
+                <summary style="font-weight:bold; font-size:1.1em; background:#fffbe7; border:2px solid #fbc02d; border-radius:8px; padding:10px; margin-bottom:10px;">BE-III</summary>
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#fffbe7; border:1px solid #fbc02d; border-radius:6px; padding:8px; margin-bottom:6px;">Ram Desai</summary>
+                    <ul>
+                        <li><b>PRN:</b> 20220101</li>
+                        <li><b>Year No:</b> 3</li>
+                        <li><b>Course:</b> Regular</li>
+                        <li><b>Subjects:</b> OS, Computer Networks, Java</li>
+                    </ul>
+                </details>
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#fffbe7; border:1px solid #fbc02d; border-radius:6px; padding:8px; margin-bottom:6px;">Vikas Rana</summary>
+                    <ul>
+                        <li><b>PRN:</b> 20220102</li>
+                        <li><b>Year No:</b> 3</li>
+                        <li><b>Course:</b> Regular</li>
+                        <li><b>Subjects:</b> OS, Computer Networks, Python</li>
+                    </ul>
+                </details>
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#fffbe7; border:1px solid #fbc02d; border-radius:6px; padding:8px; margin-bottom:6px;">Pratik Shah</summary>
+                    <ul>
+                        <li><b>PRN:</b> 20220103</li>
+                        <li><b>Year No:</b> 3</li>
+                        <li><b>Course:</b> Regular</li>
+                        <li><b>Subjects:</b> OS, Java, Data Mining</li>
+                    </ul>
+                </details>
+            </details>
+            <!-- BE-IV -->
+            <details>
+                <summary style="font-weight:bold; font-size:1.1em; background:#fdeaea; border:2px solid #d32f2f; border-radius:8px; padding:10px; margin-bottom:10px;">BE-IV</summary>
+                <!-- CRS -->
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#fdeaea; border:1px solid #d32f2f; border-radius:6px; padding:8px; margin-bottom:6px;">CRS</summary>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#fdeaea; border:1px solid #d32f2f; border-radius:6px; padding:8px; margin-bottom:6px;">Mehul Joshi</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20210101</li>
+                            <li><b>Year No:</b> 4</li>
+                            <li><b>Course:</b> CRS</li>
+                            <li><b>Subjects:</b> AI, ML, Project</li>
+                        </ul>
+                    </details>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#fdeaea; border:1px solid #d32f2f; border-radius:6px; padding:8px; margin-bottom:6px;">Rohan Mehta</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20210103</li>
+                            <li><b>Year No:</b> 4</li>
+                            <li><b>Course:</b> CRS</li>
+                            <li><b>Subjects:</b> AI, ML, Data Science</li>
+                        </ul>
+                    </details>
+                </details>
+                <!-- Non-CRS -->
+                <details style="margin-left: 24px;">
+                    <summary style="font-weight:bold; font-size:1em; background:#fdeaea; border:1px solid #d32f2f; border-radius:6px; padding:8px; margin-bottom:6px;">Non-CRS</summary>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#fdeaea; border:1px solid #d32f2f; border-radius:6px; padding:8px; margin-bottom:6px;">Simran Kaur</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20210102</li>
+                            <li><b>Year No:</b> 4</li>
+                            <li><b>Course:</b> Non-CRS</li>
+                            <li><b>Subjects:</b> Cloud, IoT, Project</li>
+                        </ul>
+                    </details>
+                    <details style="margin-left: 24px;">
+                        <summary style="font-weight:bold; font-size:1em; background:#fdeaea; border:1px solid #d32f2f; border-radius:6px; padding:8px; margin-bottom:6px;">Anjali Patel</summary>
+                        <ul>
+                            <li><b>PRN:</b> 20210104</li>
+                            <li><b>Year No:</b> 4</li>
+                            <li><b>Course:</b> Non-CRS</li>
+                            <li><b>Subjects:</b> Cloud, IoT, Cyber Security</li>
+                        </ul>
+                    </details>
+                </details>
+            </details>
+        </section>
+
+        <section id="contact-us">
+            <h2>Contact Us</h2>
+            <p>
+                <strong>Address:</strong> MSU CSE Department, MSU Campus, Vadodara, Gujarat<br>
+                <strong>Email:</strong> cse@msu.ac.in<br>
+                <strong>Phone:</strong> +91-12345-67890
+            </p>
+        </section>
+    </div>
+</body>
+</html>
