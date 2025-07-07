@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frame Switcher</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+      }
+
+      nav {
+        background: #333;
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      nav a:hover {
+        background: #555;
+      }
+
+      .frame {
+        display: none;
+        width: 100%;
+        height: 90vh;
+        border: none;
+      }
+
+      #yt:target ~ #youtube,
+      #ggl:target ~ #w3schools,
+      #chat:target ~ #wikipedia {
+        display: block;
+      }
+
+      /* body:not(:has(:target)) ~ #youtube {
+        display: block;
+      } */
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#yt">YouTube</a>
+      <a href="#ggl">Example</a>
+      <a href="#chat">Wikipedia</a>
+    </nav>
+
+    <div id="yt"></div>
+    <div id="ggl"></div>
+    <div id="chat"></div>
+
+    <iframe
+      id="youtube"
+      class="frame"
+      src="https://www.youtube.com/embed/watch?v=eK4gqHb7P7w&list=PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD&index=45"
+    ></iframe>
+    <iframe id="w3schools" class="frame" src="https://example.com"></iframe>
+    <iframe
+      id="wikipedia"
+      class="frame"
+      src="https://en.wikipedia.org/wiki/HTML"
+    ></iframe>
+  </body>
+</html>
