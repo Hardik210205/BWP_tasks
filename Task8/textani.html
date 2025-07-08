@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Animation</title>
+  <style>
+    #container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      border: 2px solid black;
+      overflow: hidden;
+    }
+
+    #text {
+      position: absolute;
+      font-size: 20px;
+      font-weight: bold;
+      left: 0;
+      top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <p><button onclick="start()">Start</button></p>
+
+  <div id="container">
+    <div id="text">Hi!</div>
+  </div>
+
+  <script>
+    function start() {
+      const text = document.getElementById("text");
+      let x = 0;
+      const amplitude = 10;      
+      const frequency = 0.05;    
+      const baseY = 10;      
+
+      const id = setInterval(frame, 5)
+
+      function frame() {
+        if (x >= 350) { 
+          clearInterval(id);
+        } else {
+          const y = baseY + Math.sin(x * frequency) * amplitude;
+          text.style.left = x + "px";
+          text.style.top = y + "px";
+          x++;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+
+        #animate,
+        #animate2 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+
+        #animate {
+            background: red;
+            top: 0;
+            left: 0;
+        }
+
+        #animate2 {
+            background: blue;
+            top: 350px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <p><button onclick="start()">Start </button></p>
+
+    <div id="container">
+        <div id="animate"></div>
+        <div id="animate2"></div>
+    </div>
+
+    <script>
+        function start() {
+            moveRed();
+            moveBlue();
+        }
+
+        function moveRed() {
+            const red = document.getElementById("animate");
+            let pos = 0;
+            const id = setInterval(frame, 5);
+
+            function frame() {
+                if (pos >= 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    red.style.top = pos + "px";
+                    red.style.left = pos + "px";
+                }
+            }
+        }
+
+        function moveBlue() {
+            const blue = document.getElementById("animate2");
+            let pos = 0;
+            const id = setInterval(frame2, 5)
+            
+            function frame2() {
+                if (pos >= 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    blue.style.top = (350 - pos) + "px";
+                    blue.style.left = pos + "px";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
