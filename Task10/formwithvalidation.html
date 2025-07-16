@@ -95,73 +95,85 @@
 
   <script>
     function showData() {
-    const firstName = document.getElementById("firstName").value.trim();
-    const middleName = document.getElementById("middleName").value.trim();
-    const lastName = document.getElementById("lastName").value.trim();
-    const address = document.getElementById("address").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const city = document.getElementById("city").value.trim();
-    const state = document.getElementById("state").value.trim();
-    const country = document.getElementById("country").value.trim();
-    const college = document.getElementById("college").value;
+      const errors = [];
 
-    var genderInputs = document.getElementsByName("gender");
-    var gender = "";
-    for (var i = 0; i < genderInputs.length; i++) {
-      if (genderInputs[i].checked) {
-        gender = genderInputs[i].value;
-        break;
+      // Fetch values
+      const firstName = document.getElementById("firstName").value.trim();
+      const middleName = document.getElementById("middleName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const state = document.getElementById("state").value.trim();
+      const country = document.getElementById("country").value.trim();
+      const college = document.getElementById("college").value;
+
+      // Gender
+      let gender = "";
+      const genderInputs = document.getElementsByName("gender");
+      for (let i = 0; i < genderInputs.length; i++) {
+        if (genderInputs[i].checked) {
+          gender = genderInputs[i].value;
+          break;
+        }
       }
-    }
 
-    var hobbiesInputs = document.getElementsByName("hobbies");
-    var hobbies = [];
-    for (var i = 0; i < hobbiesInputs.length; i++) {
-      if (hobbiesInputs[i].checked) {
-        hobbies.push(hobbiesInputs[i].value);
+      // Hobbies
+      const hobbiesInputs = document.getElementsByName("hobbies");
+      const hobbies = [];
+      for (let i = 0; i < hobbiesInputs.length; i++) {
+        if (hobbiesInputs[i].checked) {
+          hobbies.push(hobbiesInputs[i].value);
+        }
       }
-    }
 
-    const nameRegex = /^[A-Za-z]+$/;
-    const phoneRegex = /^\d{10}$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      // Regex patterns
+      const nameRegex = /^[A-Za-z]+$/;
+      const phoneRegex = /^\d{10}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!nameRegex.test(firstName)) {
-      alert("Please enter a valid First Name (letters only).");
-      return;
-    }
-    if (middleName && !nameRegex.test(middleName)) {
-      alert("Please enter a valid Middle Name (letters only).");
-      return;
-    }
-    if (!nameRegex.test(lastName)) {
-      alert("Please enter a valid Last Name (letters only).");
-      return;
-    }
-    if (gender === "") {
-      alert("Please select a Gender.");
-      return;
-    }
-    if (address === "") {
-      alert("Please enter Address.");
-      return;
-    }
-    if (!phoneRegex.test(phone)) {
-      alert("Phone number must be exactly 10 digits.");
-      return;
-    }
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid Email address.");
-      return;
-    }
-    if (city === "" || state === "" || country === "") {
-      alert("Please fill in City, State, and Country.");
-      return;
-    }
+      // Validation checks
+      if (!nameRegex.test(firstName)) {
+        errors.push("First Name should contain only letters.");
+      }
+      if (middleName && !nameRegex.test(middleName)) {
+        errors.push("Middle Name should contain only letters (or leave blank).");
+      }
+      if (!nameRegex.test(lastName)) {
+        errors.push("Last Name should contain only letters.");
+      }
+      if (!gender) {
+        errors.push("Gender must be selected.");
+      }
+      if (address === "") {
+        errors.push("Address cannot be empty.");
+      }
+      if (!phoneRegex.test(phone)) {
+        errors.push("Phone number must be exactly 10 digits.");
+      }
+      if (!emailRegex.test(email)) {
+        errors.push("Email is invalid.");
+      }
+      if (city === "") {
+        errors.push("City cannot be empty.");
+      }
+      if (state === "") {
+        errors.push("State cannot be empty.");
+      }
+      if (country === "") {
+        errors.push("Country cannot be empty.");
+      }
 
-    var output = document.getElementById("output");
-    output.innerHTML = `
+      // If there are errors, show them all at once
+      if (errors.length > 0) {
+        alert("Please fix the following error(s):\n\n" + errors.join("\n"));
+        return;
+      }
+
+      // Display the submitted data
+      const output = document.getElementById("output");
+      output.innerHTML = `
       <h2>Submitted Information:</h2>
       <p><strong>First Name:</strong> ${firstName}</p>
       <p><strong>Middle Name:</strong> ${middleName}</p>
@@ -176,7 +188,7 @@
       <p><strong>Country:</strong> ${country}</p>
       <p><strong>College:</strong> ${college}</p>
     `;
-  }
+    }
   </script>
 </body>
 
