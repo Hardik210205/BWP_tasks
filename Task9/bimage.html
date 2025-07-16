@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Dimensions & Show Color Name</title>
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 20px;
+    }
+
+    #dimensions {
+      font-weight: bold;
+      margin-top: 10px;
+      display: none;
+    }
+
+    #hoverParagraph {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: lightblue; /* You can change this color */
+    }
+
+    #colorName {
+      margin-top: 10px;
+      font-style: italic;
+      color: #333;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Image Dimension Viewer</h2>
+
+  <!-- Always visible image -->
+  <img id="myImage" src="image.jpg" alt="Sample Image" />
+
+  <!-- Button to show dimensions -->
+  <button onclick="showDimensions()">Show Image Dimensions</button>
+
+  <!-- Dimensions will appear here -->
+  <div id="dimensions"></div>
+
+  <!-- Paragraph with background -->
+  <p id="hoverParagraph">Hover over this paragraph to see the background color name.</p>
+
+  <!-- Display color name on hover -->
+  <div id="colorName"></div>
+
+  <script>
+    function showDimensions() {
+      const img = document.getElementById("myImage");
+      const dimensionText = document.getElementById("dimensions");
+
+      dimensionText.innerText = `Dimensions: ${img.naturalWidth}px × ${img.naturalHeight}px`;
+      dimensionText.style.display = "block";
+    }
+
+    const paragraph = document.getElementById("hoverParagraph");
+    const colorDisplay = document.getElementById("colorName");
+
+    paragraph.addEventListener("mouseenter", () => {
+      const color = getComputedStyle(paragraph).backgroundColor;
+      const colorName = mapColorName(color);
+      colorDisplay.innerText = `Background Color: ${colorName}`;
+      colorDisplay.style.display = "block";
+    });
+
+    paragraph.addEventListener("mouseleave", () => {
+      colorDisplay.style.display = "none";
+    });
+
+    // Helper function to map rgb to color names (basic version)
+    function mapColorName(rgb) {
+      const colors = {
+        "rgb(173, 216, 230)": "lightblue",
+        "rgb(240, 248, 255)": "aliceblue",
+        "rgb(255, 255, 0)": "yellow",
+        "rgb(255, 0, 0)": "red",
+        "rgb(0, 128, 0)": "green",
+        "rgb(0, 0, 255)": "blue",
+        "rgb(255, 192, 203)": "pink",
+        "rgb(255, 165, 0)": "orange",
+      };
+      return colors[rgb] || rgb;
+    }
+     // This function runs when any key is pressed
+    document.addEventListener("keydown", function () {
+      // Open MSU website in a new tab
+      window.open("https://msubaroda.ac.in", "_blank");
+    });
+  </script>
+
+</body>
+</html>

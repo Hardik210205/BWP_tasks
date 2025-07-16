@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form>
+    <h1>Student Registration Form</h1>
+
+    <div>
+      <label for="firstName">First Name: </label>
+      <input type="text" id="firstName">
+    </div>
+
+    <div>
+      <label for="middleName">Middle Name: </label>
+      <input type="text" id="middleName">
+    </div>
+
+    <div>
+      <label for="lastName">Last Name: </label>
+      <input type="text" id="lastName">
+    </div>
+
+    <div>
+      <label>Gender: </label>
+      <input type="radio" id="male" name="gender" value="Male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="female">Female</label>
+    </div>
+
+    <div>
+      <label for="address">Address: </label><br>
+      <textarea id="address"></textarea>
+    </div>
+
+    <div>
+      <label for="phone">Phone No.: </label>
+      <input type="tel" id="phone">
+    </div>
+
+    <div>
+      <label for="email">Email ID: </label>
+      <input type="email" id="email">
+    </div>
+
+    <div>
+      <label>Hobbies: </label>
+      <input type="checkbox" id="cricket" name="hobbies" value="Cricket">
+      <label for="cricket">Cricket</label>
+      <input type="checkbox" id="football" name="hobbies" value="Football">
+      <label for="football">Football</label>
+      <input type="checkbox" id="reading" name="hobbies" value="Reading Book">
+      <label for="reading">Reading Book</label>
+      <input type="checkbox" id="cooking" name="hobbies" value="Cooking">
+      <label for="reading">Cooking</label>
+    </div>
+
+    <div>
+      <label for="city">City: </label>
+      <input type="text" id="city">
+    </div>
+
+    <div>
+      <label for="state">State: </label>
+      <input type="text" id="state">
+    </div>
+
+    <div>
+      <label for="country">Country: </label>
+      <input type="text" id="country">
+    </div>
+
+    <div>
+      <label for="college">College Name: </label>
+      <select id="college">
+        <option value="MSUB">MSUB</option>
+        <option value="IITM">IITM</option>
+        <option value="IITB">IITB</option>
+      </select>
+    </div>
+
+    <div>
+      <button type="button" onclick="showData()">Submit</button>
+    </div>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    function showData() {
+    const firstName = document.getElementById("firstName").value.trim();
+    const middleName = document.getElementById("middleName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const state = document.getElementById("state").value.trim();
+    const country = document.getElementById("country").value.trim();
+    const college = document.getElementById("college").value;
+
+    var genderInputs = document.getElementsByName("gender");
+    var gender = "";
+    for (var i = 0; i < genderInputs.length; i++) {
+      if (genderInputs[i].checked) {
+        gender = genderInputs[i].value;
+        break;
+      }
+    }
+
+    var hobbiesInputs = document.getElementsByName("hobbies");
+    var hobbies = [];
+    for (var i = 0; i < hobbiesInputs.length; i++) {
+      if (hobbiesInputs[i].checked) {
+        hobbies.push(hobbiesInputs[i].value);
+      }
+    }
+
+    const nameRegex = /^[A-Za-z]+$/;
+    const phoneRegex = /^\d{10}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!nameRegex.test(firstName)) {
+      alert("Please enter a valid First Name (letters only).");
+      return;
+    }
+    if (middleName && !nameRegex.test(middleName)) {
+      alert("Please enter a valid Middle Name (letters only).");
+      return;
+    }
+    if (!nameRegex.test(lastName)) {
+      alert("Please enter a valid Last Name (letters only).");
+      return;
+    }
+    if (gender === "") {
+      alert("Please select a Gender.");
+      return;
+    }
+    if (address === "") {
+      alert("Please enter Address.");
+      return;
+    }
+    if (!phoneRegex.test(phone)) {
+      alert("Phone number must be exactly 10 digits.");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid Email address.");
+      return;
+    }
+    if (city === "" || state === "" || country === "") {
+      alert("Please fill in City, State, and Country.");
+      return;
+    }
+
+    var output = document.getElementById("output");
+    output.innerHTML = `
+      <h2>Submitted Information:</h2>
+      <p><strong>First Name:</strong> ${firstName}</p>
+      <p><strong>Middle Name:</strong> ${middleName}</p>
+      <p><strong>Last Name:</strong> ${lastName}</p>
+      <p><strong>Gender:</strong> ${gender}</p>
+      <p><strong>Address:</strong> ${address}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Hobbies:</strong> ${hobbies.length > 0 ? hobbies.join(', ') : 'None selected'}</p>
+      <p><strong>City:</strong> ${city}</p>
+      <p><strong>State:</strong> ${state}</p>
+      <p><strong>Country:</strong> ${country}</p>
+      <p><strong>College:</strong> ${college}</p>
+    `;
+  }
+  </script>
+</body>
+
+</html>
