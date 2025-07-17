@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Validation</title>
+</head>
+<body>
+
+    <form name="myform" onsubmit="return validateform()">
+        Enter Username: <input type="text" name="username"><br><br>
+        Enter Password: <input type="password" name="password"><br><br>
+        Enter Mobile No.: <input type="number" name="number"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script type="text/javascript">
+        function validateform() {
+            var username = document.forms["myform"]["username"].value;
+            var password = document.forms["myform"]["password"].value;
+            var number = document.forms["myform"]["number"].value;
+
+            if(number.length < 10) {
+                alert("Mobile number must be at least 10 digit.");
+                return false;
+            } 
+
+            if(!/[6-9]/.test(number)) {
+                alert("Mobile number must start with 6, 7, 8, 9.");
+                return false;
+            }
+
+            if (username.trim() === "") {
+                alert("Username must not be empty.");
+                return false;
+            }
+
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+
+            if (!/[a-zA-Z]/.test(password)) {
+                alert("Password must contain at least one alphabet.");
+                return false;
+            }
+
+            if (!/\d/.test(password)) {
+                alert("Password must contain at least one digit.");
+                return false;
+            }
+
+            if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                alert("Password must contain at least one special character.");
+                return false;
+            }
+
+            alert("Username and Password are valid!");
+            return false;
+        }
+    </script>
+
+</body>
+</html>
